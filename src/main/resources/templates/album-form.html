@@ -29,7 +29,7 @@
     </div>
     <div>
         <label for="artist">Artist</label>
-        <select id="artist" name="artistId">
+        <select id="artist" name="artistId" required>
             <option value="">Select artist</option>
             <option th:each="artist : ${artists}"
                     th:value="${artist.id}"

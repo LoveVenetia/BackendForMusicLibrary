@@ -1,0 +1,15 @@
+/Users/saku-mac/MusicLibrary_harjoitustyö/src/main/java/com/example/musiclibrary/MusicLibraryApplication.java
+/Users/saku-mac/MusicLibrary_harjoitustyö/src/main/java/com/example/musiclibrary/config/SecurityConfig.java
+/Users/saku-mac/MusicLibrary_harjoitustyö/src/main/java/com/example/musiclibrary/controller/AlbumController.java
+/Users/saku-mac/MusicLibrary_harjoitustyö/src/main/java/com/example/musiclibrary/controller/ArtistController.java
+/Users/saku-mac/MusicLibrary_harjoitustyö/src/main/java/com/example/musiclibrary/controller/AuthController.java
+/Users/saku-mac/MusicLibrary_harjoitustyö/src/main/java/com/example/musiclibrary/controller/api/AlbumRestController.java
+/Users/saku-mac/MusicLibrary_harjoitustyö/src/main/java/com/example/musiclibrary/controller/api/ArtistRestController.java
+/Users/saku-mac/MusicLibrary_harjoitustyö/src/main/java/com/example/musiclibrary/dto/AlbumRequest.java
+/Users/saku-mac/MusicLibrary_harjoitustyö/src/main/java/com/example/musiclibrary/dto/AlbumResponse.java
+/Users/saku-mac/MusicLibrary_harjoitustyö/src/main/java/com/example/musiclibrary/dto/ArtistRequest.java
+/Users/saku-mac/MusicLibrary_harjoitustyö/src/main/java/com/example/musiclibrary/dto/ArtistResponse.java
+/Users/saku-mac/MusicLibrary_harjoitustyö/src/main/java/com/example/musiclibrary/model/Album.java
+/Users/saku-mac/MusicLibrary_harjoitustyö/src/main/java/com/example/musiclibrary/model/Artist.java
+/Users/saku-mac/MusicLibrary_harjoitustyö/src/main/java/com/example/musiclibrary/repository/AlbumRepository.java
+/Users/saku-mac/MusicLibrary_harjoitustyö/src/main/java/com/example/musiclibrary/repository/ArtistRepository.java

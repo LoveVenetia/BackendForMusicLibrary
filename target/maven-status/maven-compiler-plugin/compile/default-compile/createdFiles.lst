@@ -1,0 +1,15 @@
+com/example/musiclibrary/dto/ArtistRequest.class
+com/example/musiclibrary/dto/ArtistResponse.class
+com/example/musiclibrary/repository/ArtistRepository.class
+com/example/musiclibrary/controller/ArtistController.class
+com/example/musiclibrary/controller/api/ArtistRestController.class
+com/example/musiclibrary/controller/AuthController.class
+com/example/musiclibrary/MusicLibraryApplication.class
+com/example/musiclibrary/controller/AlbumController.class
+com/example/musiclibrary/model/Artist.class
+com/example/musiclibrary/repository/AlbumRepository.class
+com/example/musiclibrary/controller/api/AlbumRestController.class
+com/example/musiclibrary/dto/AlbumResponse.class
+com/example/musiclibrary/dto/AlbumRequest.class
+com/example/musiclibrary/config/SecurityConfig.class
+com/example/musiclibrary/model/Album.class

@@ -1,0 +1,4 @@
+com/example/musiclibrary/controller/ArtistControllerAuthorizationTest.class
+com/example/musiclibrary/repository/AlbumRepositoryTest.class
+com/example/musiclibrary/repository/ArtistRepositoryTest.class
+com/example/musiclibrary/TestMusicLibraryApplication.class

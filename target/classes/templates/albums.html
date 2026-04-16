@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Albums</title>
+</head>
+<body>
+<h1>Albums</h1>
+
+<nav>
+    <a th:href="@{/artists}">Artists</a>
+    <a th:href="@{/albums}">Albums</a>
+    <a th:href="@{/login}" sec:authorize="isAnonymous()">Login</a>
+    <form th:action="@{/logout}" method="post" sec:authorize="isAuthenticated()">
+        <button type="submit">Logout</button>
+    </form>
+</nav>
+
+<p sec:authorize="hasRole('ADMIN')">
+    <a th:href="@{/albums/new}">Add Album</a>
+</p>
+
+<form th:action="@{/albums}" method="get">
+    <label for="album-search">Search albums or artists</label>
+    <input id="album-search" type="text" name="query" th:value="${query}">
+    <button type="submit">Search</button>
+    <a th:href="@{/albums}">Clear</a>
+</form>
+
+<table>
+    <thead>
+    <tr>
+        <th>Title</th>
+        <th>Release Year</th>
+        <th>Artist</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="album : ${albums}">
+        <td th:text="${album.title}">Album Title</td>
+        <td th:text="${album.releaseYear}">2000</td>
+        <td th:text="${album.artist.name}">Artist Name</td>
+        <td sec:authorize="hasRole('ADMIN')">
+            <a th:href="@{/album/{id}/edit(id=${album.id})}">Edit</a>
+            <form th:action="@{/album/{id}/delete(id=${album.id})}" method="post">
+                <button type="submit">Delete</button>
+            </form>
+        </td>
+    </tr>
+    <tr th:if="${#lists.isEmpty(albums)}">
+        <td sec:authorize="hasRole('ADMIN')" colspan="4">No albums found.</td>
+        <td sec:authorize="!hasRole('ADMIN')" colspan="3">No albums found.</td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

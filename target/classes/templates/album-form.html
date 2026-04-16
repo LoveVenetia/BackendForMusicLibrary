@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Album Form</title>
+</head>
+<body>
+<h1 th:text="${album.id == null} ? 'Add Album' : 'Edit Album'">Album Form</h1>
+
+<nav>
+    <a th:href="@{/artists}">Artists</a>
+    <a th:href="@{/albums}">Albums</a>
+    <form th:action="@{/logout}" method="post" sec:authorize="isAuthenticated()">
+        <button type="submit">Logout</button>
+    </form>
+</nav>
+
+<form th:action="${album.id == null} ? @{/albums} : @{/album/{id}(id=${album.id})}" th:object="${album}" method="post">
+    <div>
+        <label for="title">Title</label>
+        <input id="title" type="text" th:field="*{title}">
+        <p th:if="${#fields.hasErrors('title')}" th:errors="*{title}">Title error</p>
+    </div>
+    <div>
+        <label for="releaseYear">Release Year</label>
+        <input id="releaseYear" type="number" th:field="*{releaseYear}">
+        <p th:if="${#fields.hasErrors('releaseYear')}" th:errors="*{releaseYear}">Release year error</p>
+    </div>
+    <div>
+        <label for="artist">Artist</label>
+        <select id="artist" name="artistId">
+            <option value="">Select artist</option>
+            <option th:each="artist : ${artists}"
+                    th:value="${artist.id}"
+                    th:text="${artist.name}"
+                    th:selected="${album.artist != null && album.artist.id == artist.id}">
+                Artist
+            </option>
+        </select>
+        <p th:if="${#fields.hasErrors('artist')}" th:errors="*{artist}">Artist error</p>
+    </div>
+    <div>
+        <button type="submit">Save</button>
+    </div>
+</form>
+</body>
+</html>
